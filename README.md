@@ -1,2 +1,2 @@
 # Hospital-Management
-this is all about hospital management
+This project will help in hospital management.
