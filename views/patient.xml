@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--    form view-->
+        <record id="patient_view_form" model="ir.ui.view">
+            <field name="name">hospital.patient.form</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="age"/>
+                                <field name="gender"/>
+                                <field name="contact_No"/>
+                                <field name="zipcode"/>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--    tree vies-->
+        <record id="patient_view_tree" model="ir.ui.view">
+            <field name="name">hospital.patient.tree</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="contact_No"/>
+                    <field name="zipcode"/>
+                    <field name="gender"/>
+                    <field name="address"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!--    search views-->
+        <record id="patient_view_search" model="ir.ui.view">
+            <field name="name">hospital.patient.search</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Patient Name:" filter_domain="['|', ('name','ilike',self), ('zipcode','ilike',self)]"/>
+                    <field name="zipcode"/>
+                    <field name="gender"/>
+                    <field name="age"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

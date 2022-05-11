@@ -7,9 +7,15 @@ class HospitalPatient(models.Model):
     _description = "management"
 
     name = fields.Char(string='Name:', required=True)
-    age = fields.Integer(string='Age:', required=True)
-    contact_No = fields.Intiger(string='Contact No:', required=True)
-    Address = fields.Text(string='Full Address:')
+    age = fields.Integer(string='Age:')
+    contact_No = fields.Char(string='Contact No:')
+    zipcode = fields.Char(string='Zipcode:')
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ], required=True, default='male')
+    address = fields.Text(string='Full Address:')
 
 
 

@@ -12,6 +12,7 @@
     'depends': [],
     'data': [
         'security/ir.model.access.csv',
+        'views/menu&action.xml'
 
 
     ],
