@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <!-- .........................   action of doctor   ..................................... -->
+        <record id="action_doctor" model="ir.actions.act_window">
+            <field name="name">Doctors</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.doctor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new patient!
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+                id="menu_hospital_doctor_root_id"
+                name="Doctors"
+                parent="hospital_menu__detail_doctor_id"
+                action="action_doctor"
+                sequence="15"/>
+        <!--    form view-->
+        <record id="doctor_view_form" model="ir.ui.view">
+            <field name="name">hospital.doctor.form</field>
+            <field name="model">hospital.doctor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="age"/>
+                                <field name="gender"/>
+                                <field name="specialised"/>
+                                <field name="zipcode"/>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--    tree vies-->
+        <record id="doctor_view_tree" model="ir.ui.view">
+            <field name="name">hospital.doctor.tree</field>
+            <field name="model">hospital.doctor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="specialised"/>
+                    <field name="zipcode"/>
+                    <field name="gender"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--    search views-->
+        <record id="doctor_view_search" model="ir.ui.view">
+            <field name="name">hospital.doctor.search</field>
+            <field name="model">hospital.doctor</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Doctor Name:"/>
+                    <field name="zipcode"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

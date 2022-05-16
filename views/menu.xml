@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+                id="menu_hospital_root_id"
+                name="Hospital Management"
+                sequence="10"/>
+
+        <menuitem
+                id="hospital_menu__detail_patient_id"
+                name="Patient Detail"
+                parent="menu_hospital_root_id"
+                sequence="20"/>
+        <menuitem
+                id="hospital_menu__detail_doctor_id"
+                name="Doctors Detail"
+                parent="menu_hospital_root_id"
+                sequence="30"/>
+        <menuitem
+                id="hospital_menu__detail_appointment_id"
+                name="Appointments"
+                parent="menu_hospital_root_id"
+                sequence="40"/>
+        <menuitem
+                id="hospital_menu__cancel_appointment_id"
+                name="Cancel Appointments"
+                parent="hospital_menu__detail_appointment_id"
+                action="action_cancel_appointment"
+                sequence="50"/>
+    </data>
+
+</odoo>

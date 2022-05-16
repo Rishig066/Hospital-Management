@@ -12,7 +12,12 @@
     'depends': [],
     'data': [
         'security/ir.model.access.csv',
-        'views/menu&action.xml'
+        'wizard/cancel_appointment.xml',
+        'views/patient.xml',
+        'views/menu.xml',
+        'views/appointment.xml',
+        'views/doctor.xml',
+
 
 
     ],

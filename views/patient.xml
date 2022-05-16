@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--    form view-->
+        <!-- .........................   action of patient   ..................................... -->
+        <record id="action_patient" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.patient</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new patient!
+                </p>
+            </field>
+        </record>
+
+        <!--        menu      -->
+        <menuitem
+                id="menu_hospital_patient_root_id"
+                name="Patients"
+                parent="hospital_menu__detail_patient_id"
+                action="action_patient"
+                sequence="14"/>
+
+        <!--  ====================  form view-->
         <record id="patient_view_form" model="ir.ui.view">
             <field name="name">hospital.patient.form</field>
             <field name="model">hospital.patient</field>
@@ -13,6 +34,8 @@
                                 <field name="name"/>
                                 <field name="age"/>
                                 <field name="gender"/>
+                            </group>
+                            <group>
                                 <field name="contact_No"/>
                                 <field name="zipcode"/>
                                 <field name="address"/>
@@ -22,6 +45,7 @@
                 </form>
             </field>
         </record>
+
         <!--    tree vies-->
         <record id="patient_view_tree" model="ir.ui.view">
             <field name="name">hospital.patient.tree</field>
@@ -34,7 +58,6 @@
                     <field name="zipcode"/>
                     <field name="gender"/>
                     <field name="address"/>
-
                 </tree>
             </field>
         </record>
@@ -45,10 +68,19 @@
             <field name="model">hospital.patient</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name" string="Patient Name:" filter_domain="['|', ('name','ilike',self), ('zipcode','ilike',self)]"/>
+                    <field name="name" string="patient Name:"/>
                     <field name="zipcode"/>
-                    <field name="gender"/>
-                    <field name="age"/>
+                </search>
+            </field>
+        </record>
+         <!--    search views-->
+        <record id="patient_view_search" model="ir.ui.view">
+            <field name="name">hospital.patient.search</field>
+            <field name="model">hospital.patient</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Patient Name:"/>
+                    <field name="zipcode"/>
                 </search>
             </field>
         </record>
